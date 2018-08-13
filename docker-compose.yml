@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  notebook:
+    image: tensorflow/tensorflow:1.10.0-py3
+    volumes:
+      - type: bind
+        source: .
+        target: /notebooks/probability
+    ports:
+      - 8888:8888
+    command: /run_jupyter.sh --NotebookApp.token='' --allow-root
